@@ -44,4 +44,3 @@ name: Checkout código
       
 name: Deploy (simulado)
       run: echo "🚀 Deploy realizado com sucesso!"
-﻿
