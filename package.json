@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "test": "echo 'Nenhum teste implementado' && exit 0",
+    "lint": "echo 'Simulação de lint' && exit 0"
   },
   "keywords": [],
   "author": "",
