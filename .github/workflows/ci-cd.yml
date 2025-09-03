@@ -2,20 +2,18 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       
-name: Checkout código
+name: Checkout
       uses: actions/checkout@v3
 
       
-name: Configurar Node.js
+name: Setup Node.js
       uses: actions/setup-node@v3
       with:
         node-version: 18
@@ -29,18 +27,13 @@ name: Rodar testes
       run: npm test
 
       
-name: Lint do código
+name: Lint
       run: npm run lint || echo "Lint falhou, mas continuando..."
 
   deploy:
-    needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    needs: build
     steps:
       
-name: Checkout código
-      uses: actions/checkout@v3
-
-      
-name: Deploy (simulado)
-      run: echo "🚀 Deploy realizado com sucesso!"
+name: Deploy simulado
+      run: echo "🚀 Deploy concluído!"
